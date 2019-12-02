@@ -11,14 +11,16 @@ function createGreeting(name, age) {
   if (age === undefined || name === undefined) {
     throw new Error("Arguments not valid.");
   } else if (typeof age === isNaN || typeof name !== "string") {
-    throw new TypeError();
+    throw new TypeError("Wrong type");
   }
 
-  const yearOfBirth = 2019 - age;
+  const yearOfBirth = getYearOfBirth(age);
   return `Hi, my name is ${name} and I am ${age} years old. I was born in ${yearOfBirth}`;
 }
 
 try {
   const greeting1 = createGreeting();
-} catch (err) {}
-console.log(greeting1);
+  log(greeting1);
+} catch (err) {
+  console.error(err.message);
+}
