@@ -8,8 +8,10 @@ function getYearOfBirth(age) {
 }
 
 function createGreeting(name, age) {
-  if (typeof age !== "number" || name === undefined) {
+  if (age === undefined || name === undefined) {
     throw new Error("Arguments not valid.");
+  } else if (typeof age === isNaN || typeof name !== "string") {
+    throw new TypeError();
   }
 
   const yearOfBirth = 2019 - age;
