@@ -1,1 +1,7 @@
-console.log("Hi, my name is Will");
+"use strict";
+
+function createGreeting() {
+  console.log("Hi, my name is Will");
+}
+
+createGreeting();
